@@ -39,6 +39,7 @@
     padding: 15px 0;
     position: absolute;
     bottom: 0;
+    cursor: pointer;
 }
 .btn-cart:hover{
     background-color: orange;

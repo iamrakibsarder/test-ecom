@@ -1,0 +1,26 @@
+.cart-holder{
+    margin: 50px 0;
+    padding: 20px;
+    background-color: rgb(255, 194, 80);
+    border-radius: 8px;
+}
+
+.clear-cart{
+    border-radius: 4px;
+    background: #FF3030; 
+    color: white;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    margin: 12px 0;
+}
+.review-order{
+    border-radius: 4px;
+    background: #F90; 
+    color: white;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Shop.css';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
+import { addToDb, getShoppingCart } from '../../utilities/fakedb';
 
 const Shop = () => {
 
@@ -19,12 +20,28 @@ const Shop = () => {
     const filteredProducts = products.filter(p => !removeIds.includes(p.id));
     // console.log(products.length,filterdProducts.length);
 
+    useEffect(() => {
+        const storedCart = getShoppingCart();
+        // console.log(storedCart);
+
+        for(const id in storedCart){
+            
+            const addedProduct = products.find(product => product.id === id);
+            const quantity = storedCart[id];
+            addedProduct.quantity = quantity
+            console.log(addedProduct);
+        }
+
+    }, [products])
+
+
     const handleAddToCart = (product) => {
         const newCart = [...cart, product];
         setCart(newCart);
+        addToDb(product.id);
     }
 
-    console.log(cart);
+    // console.log(cart);
 
     return (
         

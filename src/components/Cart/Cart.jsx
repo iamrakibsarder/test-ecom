@@ -3,14 +3,14 @@ import './Cart.css';
 
 
 const Cart = ({cart}) => {
-
+    // console.log(cart);
     let total = 0;
 
     for(const p of cart){
         total = total + p.price;
     }
     let shippingCharge;
-    if(total>1000){
+    if(total>1000 || total == 0){
         shippingCharge = 0;
     }
     else{
